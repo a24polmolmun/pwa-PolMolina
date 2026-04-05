@@ -76,3 +76,6 @@ Tras solucionar los errores de dependencias, la Fase 1 y Fase 2 del `tasks.md` s
 
 ### 3. Control de Versiones
 He realizado un commit tras la estabilización del entorno para asegurar que la base del código fuente sea sólida antes de empezar con la lógica del Chatbot IA.
+
+### 4. Verificación del MVP Inicial
+He verificado el despliegue local en `http://localhost:3000/`. El servidor de desarrollo de Nuxt (Nitro) responde correctamente, Tailwind CSS está inyectado y la estructura de layouts/pages es consistente con la especificación técnica. Procedo a dar luz verde para la lógica de estado.
