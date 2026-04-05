@@ -1,8 +1,9 @@
 import OpenAI from 'openai'
 
 export default defineEventHandler(async (event) => {
-  // Inicializamos dentro del evento para prevenir el error de "renderer" en Nitro / Nuxt al evaluar variables globales.
-  const apiKey = process.env.OPENAI_API_KEY || ''
+  // Inicializamos usando runtimeConfig para mejor compatibilidad en Nuxt 3
+  const config = useRuntimeConfig()
+  const apiKey = config.openaiApiKey || ''
   const openai = new OpenAI({ apiKey: apiKey })
   try {
     const body = await readBody(event)

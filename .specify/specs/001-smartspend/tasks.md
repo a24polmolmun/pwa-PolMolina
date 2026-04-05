@@ -29,6 +29,6 @@
   - [x] Diseñar el historial de chat con *Tailwind CSS*.
   - [x] Integrar el consumo hacia `/api/chat.post` y simular la visualización de "pensando...".
 
-- [ ] **Fase 7: PWA Manifesto & Polish**
-  - [ ] Ajustar el archivo `nuxt.config.ts` verificando Service Workers e iconografía.
-  - [ ] Testear resiliencia de la interfaz instalable.
+- [x] **Fase 7: PWA Manifesto & Polish**
+  - [x] Ajustar el archivo `nuxt.config.ts` verificando Service Workers e iconografía.
+  - [x] Testear resiliencia de la interfaz instalable.
