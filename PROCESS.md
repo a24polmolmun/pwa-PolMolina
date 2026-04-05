@@ -79,3 +79,9 @@ He realizado un commit tras la estabilización del entorno para asegurar que la 
 
 ### 4. Verificación del MVP Inicial
 He verificado el despliegue local en `http://localhost:3000/`. El servidor de desarrollo de Nuxt (Nitro) responde correctamente, Tailwind CSS está inyectado y la estructura de layouts/pages es consistente con la especificación técnica. Procedo a dar luz verde para la lógica de estado.
+
+### 5. Finalización de la Capa de Datos (Pinia)
+El agente ha completado la Fase 2. Se ha implementado el Store de gastos con las siguientes características técnicas:
+- **Tipado estricto:** Interfaz `Expense` con UUID, categoría, cantidad y concepto.
+- **Persistencia Segura:** Uso de `import.meta.client` para evitar errores de hidratación en SSR al acceder a `localStorage`.
+- **Acciones reactivas:** Métodos listos para añadir y eliminar gastos con sincronización automática.

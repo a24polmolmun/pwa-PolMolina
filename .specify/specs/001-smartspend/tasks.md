@@ -6,10 +6,10 @@
   - [x] Añadir módulos clave (`@pinia/nuxt`, `@vite-pwa/nuxt`).
   - [x] Limpiar código por defecto e inicializar directorio de carpetas.
 
-- [ ] **Fase 2: Arquitectura de Estado Local (Capa Lógica)**
-  - [ ] Crear el "Store" principal de Pinia en `stores/expenses.ts`.
-  - [ ] Implementar la hidratación / guardado reactivo al `localStorage`.
-  - [ ] Implementar Actions para agregar gastos.
+- [x] **Fase 2: Arquitectura de Estado Local (Capa Lógica)**
+  - [x] Crear el "Store" principal de Pinia en `stores/expenses.ts`.
+  - [x] Implementar la hidratación / guardado reactivo al `localStorage`.
+  - [x] Implementar Actions para agregar gastos.
 
 - [ ] **Fase 3: Desarrollo de UI - Gestión de Gastos**
   - [ ] Códificar Componente `ExpenseForm.vue` (manejo de inputs y submit seguro).
