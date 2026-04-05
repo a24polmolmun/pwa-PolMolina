@@ -15,6 +15,8 @@ Para definir las reglas del proyecto, utilicé el siguiente comando con Antigrav
 Para definir la idea de la aplicación, utilicé:
 /speckit.specify Quiero construir "SmartSpend", una aplicación de gestión de gastos personales.  Usuarios: Perfil único local por ahora. Funcionalidades: El usuario puede añadir gastos (cantidad, categoría, fecha) y ver un listado. Chatbot: Habrá una ventana de chat flotante integrada. El usuario le podrá preguntar cosas como "¿He gastado mucho en comida?" y el chatbot actuará como un asesor financiero analizando sus gastos. Importante: No uses tecnologías concretas en esta descripción, solo céntrate en el comportamiento y en que debe ser una PWA instalable.
 
+---
+
 ## Fase 2: Clarificación y Planificación Técnica
 **Fecha:** Día 2 (Revisión de arquitectura)
 
@@ -31,6 +33,8 @@ El agente analizó la especificación y detectó posibles vacíos lógicos (ries
  4. Análisis IA: El chatbot solo analizará los datos de los últimos 30 días para ahorrar recursos y ser más rápido.
  
  Con esto, actualiza el archivo `spec.md` y procede a ejecutar el comando `/speckit.plan`. Recuerda que usaremos Nuxt 3, el módulo Vite PWA, Pinia para el estado y Nitro para las funciones Serverless."
+
+ ---
 
  ## Fase 3: Aprobación del Plan Técnico y Stack
 **Fecha:** Día 3
@@ -52,3 +56,23 @@ He ejecutado el comando `/speckit.tasks`, lo que ha generado una lista de 7 fase
 
 ### 2. Control de Versiones
 He realizado un commit de seguridad con toda la documentación técnica (`spec.md`, `plan.md`, `tasks.md`) antes de iniciar la generación de código fuente para tener un punto de restauración claro.
+
+---
+
+## Fase 5: Implementación del Core y Resolución de Conflictos
+**Fecha:** Día 5
+
+### 1. Inicialización del Entorno Nuxt 3
+He procedido con la ejecución de `/speckit.implement`. Durante el proceso, surgieron dos bloqueos críticos que requirieron intervención manual como Tech Lead:
+
+- **Conflicto de Ciclo de Vida:** El agente intentó ejecutar `nuxt prepare` con módulos (Tailwind, Pinia, PWA) declarados en el `nuxt.config.ts` antes de que `npm install` terminara de descargarlos. 
+- **Solución Aplicada:** Autoricé una estrategia de "limpieza y re-activación". El agente comentó temporalmente los módulos, forzó la instalación de dependencias y los reactivó una vez el entorno era estable.
+
+### 2. Estado de la Aplicación
+Tras solucionar los errores de dependencias, la Fase 1 y Fase 2 del `tasks.md` se han completado con éxito:
+- **Estructura:** Scaffolding de carpetas completado (`pages/`, `components/`, `server/`, `stores/`).
+- **UI Base:** Integración de Tailwind CSS verificada.
+- **Estado Global:** Store de Pinia configurado para la gestión reactiva de gastos con persistencia en LocalStorage.
+
+### 3. Control de Versiones
+He realizado un commit tras la estabilización del entorno para asegurar que la base del código fuente sea sólida antes de empezar con la lógica del Chatbot IA.

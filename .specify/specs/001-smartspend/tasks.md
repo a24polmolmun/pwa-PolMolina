@@ -1,10 +1,10 @@
 # Lista de Tareas (SmartSpend PWA)
 
-- [ ] **Fase 1: Configuración Inicial**
-  - [ ] Generar el nuevo proyecto de Nuxt 3 (`npx nuxi@latest init`).
-  - [ ] Instalar e inicializar Tailwind CSS (`@nuxtjs/tailwindcss`).
-  - [ ] Añadir módulos clave (`@pinia/nuxt`, `@vite-pwa/nuxt`).
-  - [ ] Limpiar código por defecto e inicializar directorio de carpetas.
+- [x] **Fase 1: Configuración Inicial**
+  - [x] Generar el nuevo proyecto de Nuxt 3 (`npx nuxi@latest init`).
+  - [x] Instalar e inicializar Tailwind CSS (`@nuxtjs/tailwindcss`).
+  - [x] Añadir módulos clave (`@pinia/nuxt`, `@vite-pwa/nuxt`).
+  - [x] Limpiar código por defecto e inicializar directorio de carpetas.
 
 - [ ] **Fase 2: Arquitectura de Estado Local (Capa Lógica)**
   - [ ] Crear el "Store" principal de Pinia en `stores/expenses.ts`.
