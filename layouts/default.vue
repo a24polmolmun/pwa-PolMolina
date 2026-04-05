@@ -13,9 +13,9 @@
       <slot />
     </main>
 
-    <!-- Placeholder for Chatbot widget -->
+    <!-- Chatbot widget global persistente -->
     <ClientOnly>
-      <!-- <AiWidget /> -->
+      <ChatbotAiWidget />
     </ClientOnly>
   </div>
 </template>

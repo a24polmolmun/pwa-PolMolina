@@ -129,3 +129,14 @@ Tras el error 500 detectado, supervisé la reestructuración del endpoint de IA:
 - **Diagnóstico:** El constructor de OpenAI se ejecutaba en el "Top-level", bloqueando el renderizador de Nuxt antes de su inicialización.
 - **Solución:** Se ha implementado una inicialización perezosa (Lazy) dentro del `defineEventHandler`. Esto no solo soluciona el error de arranque, sino que optimiza el consumo de memoria del servidor al instanciar el SDK de IA solo bajo demanda.
 - **Resultado:** El dashboard vuelve a ser operativo y el backend de IA está listo para recibir peticiones del frontend.
+
+---
+
+### 12. Implementación del Frontend del Asesor IA (Fase 6)
+**Fecha:** Día 11
+
+He validado la integración del widget de chat en la interfaz de usuario:
+- **UI/UX:** Se ha implementado un Floating Action Button (FAB) con posicionamiento fijo y niveles de capa (z-index) correctos para no interferir con el dashboard.
+- **Interactividad:** La ventana de chat cuenta con estados reactivos para el historial de mensajes y un indicador de "typing" animado que mejora la percepción de feedback del usuario.
+- **Sincronización de Contexto:** He verificado que el componente inyecta el estado de Pinia (gastos del LocalStorage) en cada petición de chat, garantizando que la conversación sea contextual.
+- **Manejo de Scroll:** Uso de `nextTick` para asegurar que el área de mensajes siempre muestre la interacción más reciente, optimizando la experiencia en dispositivos móviles.

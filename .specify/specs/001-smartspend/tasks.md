@@ -24,10 +24,10 @@
   - [x] Crear el endpoint seguro en `server/api/chat.post.ts`.
   - [x] Definir el *System Prompt* y establecer manejo de errores/timeouts (`try/catch`).
 
-- [ ] **Fase 6: Chatbot Widget (Frontend UI)**
-  - [ ] Crear el componente `AiWidget.vue` (Floating Action Button).
-  - [ ] Diseñar el historial de chat con *Tailwind CSS*.
-  - [ ] Integrar el consumo hacia `/api/advisor.post` y simular la visualización de "pensando...".
+- [x] **Fase 6: Chatbot Widget (Frontend UI)**
+  - [x] Crear el componente `AiWidget.vue` (Floating Action Button).
+  - [x] Diseñar el historial de chat con *Tailwind CSS*.
+  - [x] Integrar el consumo hacia `/api/chat.post` y simular la visualización de "pensando...".
 
 - [ ] **Fase 7: PWA Manifesto & Polish**
   - [ ] Ajustar el archivo `nuxt.config.ts` verificando Service Workers e iconografía.
