@@ -31,3 +31,24 @@ El agente analizó la especificación y detectó posibles vacíos lógicos (ries
  4. Análisis IA: El chatbot solo analizará los datos de los últimos 30 días para ahorrar recursos y ser más rápido.
  
  Con esto, actualiza el archivo `spec.md` y procede a ejecutar el comando `/speckit.plan`. Recuerda que usaremos Nuxt 3, el módulo Vite PWA, Pinia para el estado y Nitro para las funciones Serverless."
+
+ ## Fase 3: Aprobación del Plan Técnico y Stack
+**Fecha:** Día 3
+
+### 1. Definición de Tecnologías
+Tras revisar la propuesta del agente, hemos tomado decisiones clave para asegurar la viabilidad del MVP:
+- **Framework:** Nuxt 3 (Vue 3 + TypeScript).
+- **Estilos:** Tailwind CSS (para facilitar la integración de UI generativa).
+- **Estado:** Pinia con persistencia en LocalStorage (Offline-first).
+- **IA:** OpenAI (GPT-4o-mini) mediante endpoints de Nitro Serverless.
+
+---
+
+## Fase 4: Desglose de tareas y preparación de entorno
+**Fecha:** Día 4
+
+### 1. Generación del Roadmap
+He ejecutado el comando `/speckit.tasks`, lo que ha generado una lista de 7 fases de implementación en `tasks.md`. He auditado la lista para asegurar que el chatbot y la lógica de PWA están integrados desde el principio.
+
+### 2. Control de Versiones
+He realizado un commit de seguridad con toda la documentación técnica (`spec.md`, `plan.md`, `tasks.md`) antes de iniciar la generación de código fuente para tener un punto de restauración claro.
