@@ -11,10 +11,10 @@
   - [x] Implementar la hidratación / guardado reactivo al `localStorage`.
   - [x] Implementar Actions para agregar gastos.
 
-- [ ] **Fase 3: Desarrollo de UI - Gestión de Gastos**
-  - [ ] Códificar Componente `ExpenseForm.vue` (manejo de inputs y submit seguro).
-  - [ ] Códificar Componente `ExpenseList.vue` (renderizado de arrays con Tailwind).
-  - [ ] Unir los componentes en la página principal (`pages/index.vue`).
+- [x] **Fase 3: Desarrollo de UI - Gestión de Gastos**
+  - [x] Códificar Componente `ExpenseForm.vue` (manejo de inputs y submit seguro).
+  - [x] Códificar Componente `ExpenseList.vue` (renderizado de arrays con Tailwind).
+  - [x] Unir los componentes en la página principal (`pages/index.vue`).
 
 - [ ] **Fase 4: Importación y Exportación JSON**
   - [ ] Añadir lógica Action en la Store y Botones UI en el Dashboard para descargar/subir el estado local en `.json`.

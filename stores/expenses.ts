@@ -13,22 +13,28 @@ export const useExpensesStore = defineStore('expenses', () => {
   const expenses = ref<Expense[]>([])
   const isLoaded = ref(false)
   
-  // Hidratar desde localStorage sólo en el cliente para prevenir SSR mismatches
-  if (import.meta.client) {
-    const saved = localStorage.getItem('smartspend_expenses')
-    if (saved) {
-      try {
-        expenses.value = JSON.parse(saved)
-      } catch (e) {
-        console.error('Failed to parse localStorage data', e)
-      }
-    }
-    isLoaded.value = true
+  let isWatching = false
 
-    // Observar cambios profundamente y guardarlos de forma reactiva
-    watch(expenses, (newVal) => {
-      localStorage.setItem('smartspend_expenses', JSON.stringify(newVal))
-    }, { deep: true })
+  const loadFromStorage = () => {
+    if (isLoaded.value) return
+
+    try {
+      const saved = localStorage.getItem('smartspend_expenses')
+      if (saved) {
+        expenses.value = JSON.parse(saved)
+      }
+    } catch (e) {
+      console.error('Failed to parse localStorage data', e)
+    } finally {
+      isLoaded.value = true // Forzar siempre el fin de la carga
+    }
+
+    if (!isWatching) {
+      watch(expenses, (newVal) => {
+        localStorage.setItem('smartspend_expenses', JSON.stringify(newVal))
+      }, { deep: true })
+      isWatching = true
+    }
   }
 
   // Acción: Añadir gasto
@@ -54,6 +60,7 @@ export const useExpensesStore = defineStore('expenses', () => {
   return {
     expenses,
     isLoaded,
+    loadFromStorage,
     addExpense,
     removeExpense,
     exportData

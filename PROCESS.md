@@ -85,3 +85,17 @@ El agente ha completado la Fase 2. Se ha implementado el Store de gastos con las
 - **Tipado estricto:** Interfaz `Expense` con UUID, categoría, cantidad y concepto.
 - **Persistencia Segura:** Uso de `import.meta.client` para evitar errores de hidratación en SSR al acceder a `localStorage`.
 - **Acciones reactivas:** Métodos listos para añadir y eliminar gastos con sincronización automática.
+
+---
+
+## Fase 6: Depuración de Estado y Recuperación de Entorno
+**Fecha:** Día 7
+
+### 1. Incidencia en el Renderizado Reactivo
+Al intentar registrar el primer gasto, el componente `ExpenseList` entró en un bucle de carga infinito. Tras realizar una inspección técnica mediante las "Developer Tools" (F12) y no detectar errores sintácticos en la consola, determiné que el problema radicaba en la lógica de hidratación del Store de Pinia.
+
+### 2. Resolución de Bloqueo
+Tras las instrucciones dadas, el agente ha reestructurado la lógica de carga del Store:
+- **Encapsulamiento:** Se ha creado la función `loadFromStorage()` con un bloque `finally` para garantizar que el estado `isLoaded` cambie a `true` independientemente del resultado de la lectura.
+- **Ciclo de Vida:** Se ha implementado `onMounted` en el componente `ExpenseList.vue`. Esto asegura que la sincronización con el `localStorage` ocurra exclusivamente en el cliente, eliminando el conflicto de renderizado entre servidor y navegador.
+- **Validación:** He realizado una prueba de caja negra añadiendo un gasto real; el componente ha reaccionado instantáneamente y los datos persisten tras el refresco de página.
