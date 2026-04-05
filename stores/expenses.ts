@@ -52,9 +52,24 @@ export const useExpensesStore = defineStore('expenses', () => {
     expenses.value = expenses.value.filter(e => e.id !== id)
   }
 
-  // Acción: Exportar a JSON (Lo prepararemos aquí para usarlo en la siguiente fase)
+  // Acción: Exportar a JSON
   const exportData = (): string => {
     return JSON.stringify(expenses.value, null, 2)
+  }
+
+  // Acción: Importar desde JSON
+  const importData = (jsonData: string): boolean => {
+    try {
+      const parsed = JSON.parse(jsonData)
+      if (Array.isArray(parsed)) {
+        // Sustituimos todo el store y delegamos el guardado al watcher activo
+        expenses.value = parsed
+        return true
+      }
+      return false
+    } catch (e) {
+      return false
+    }
   }
 
   return {
@@ -63,6 +78,7 @@ export const useExpensesStore = defineStore('expenses', () => {
     loadFromStorage,
     addExpense,
     removeExpense,
-    exportData
+    exportData,
+    importData
   }
 })

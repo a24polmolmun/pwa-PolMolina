@@ -16,8 +16,8 @@
   - [x] Códificar Componente `ExpenseList.vue` (renderizado de arrays con Tailwind).
   - [x] Unir los componentes en la página principal (`pages/index.vue`).
 
-- [ ] **Fase 4: Importación y Exportación JSON**
-  - [ ] Añadir lógica Action en la Store y Botones UI en el Dashboard para descargar/subir el estado local en `.json`.
+- [x] **Fase 4: Importación y Exportación JSON**
+  - [x] Añadir lógica Action en la Store y Botones UI en el Dashboard para descargar/subir el estado local en `.json`.
 
 - [ ] **Fase 5: Módulo del Asesor IA (Nitro + OpenAI)**
   - [ ] Instalar paquete oficial/fetcher para requerir `api.openai`.

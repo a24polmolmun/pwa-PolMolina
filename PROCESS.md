@@ -99,3 +99,13 @@ Tras las instrucciones dadas, el agente ha reestructurado la lógica de carga de
 - **Encapsulamiento:** Se ha creado la función `loadFromStorage()` con un bloque `finally` para garantizar que el estado `isLoaded` cambie a `true` independientemente del resultado de la lectura.
 - **Ciclo de Vida:** Se ha implementado `onMounted` en el componente `ExpenseList.vue`. Esto asegura que la sincronización con el `localStorage` ocurra exclusivamente en el cliente, eliminando el conflicto de renderizado entre servidor y navegador.
 - **Validación:** He realizado una prueba de caja negra añadiendo un gasto real; el componente ha reaccionado instantáneamente y los datos persisten tras el refresco de página.
+
+---
+
+### 8. Implementación de Sistema de Backup (Fase 4)
+**Fecha:** Día 8
+
+He validado la funcionalidad de Exportación/Importación de datos:
+- **Seguridad:** El proceso es 100% "Client-Side" mediante la API de Blobs del navegador, garantizando que los datos financieros no viajan a servidores externos durante el respaldo.
+- **Persistencia Externa:** Se ha verificado que el archivo `smartspend_backup.json` generado es válido y permite la recuperación total del estado de la aplicación en caso de pérdida de caché o cambio de dispositivo.
+- **Control de Errores:** Se ha implementado una validación mediante `FileReader` para evitar la corrupción del Store de Pinia al intentar importar archivos con formato incorrecto.
