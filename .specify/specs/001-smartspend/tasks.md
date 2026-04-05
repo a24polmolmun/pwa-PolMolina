@@ -19,10 +19,10 @@
 - [x] **Fase 4: Importación y Exportación JSON**
   - [x] Añadir lógica Action en la Store y Botones UI en el Dashboard para descargar/subir el estado local en `.json`.
 
-- [ ] **Fase 5: Módulo del Asesor IA (Nitro + OpenAI)**
-  - [ ] Instalar paquete oficial/fetcher para requerir `api.openai`.
-  - [ ] Crear el endpoint seguro en `server/api/advisor.post.ts`.
-  - [ ] Definir el *System Prompt* y establecer manejo de errores/timeouts (`try/catch`).
+- [x] **Fase 5: Módulo del Asesor IA (Nitro + OpenAI)**
+  - [x] Instalar paquete oficial/fetcher para requerir `api.openai`.
+  - [x] Crear el endpoint seguro en `server/api/chat.post.ts`.
+  - [x] Definir el *System Prompt* y establecer manejo de errores/timeouts (`try/catch`).
 
 - [ ] **Fase 6: Chatbot Widget (Frontend UI)**
   - [ ] Crear el componente `AiWidget.vue` (Floating Action Button).

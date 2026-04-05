@@ -109,3 +109,23 @@ He validado la funcionalidad de Exportación/Importación de datos:
 - **Seguridad:** El proceso es 100% "Client-Side" mediante la API de Blobs del navegador, garantizando que los datos financieros no viajan a servidores externos durante el respaldo.
 - **Persistencia Externa:** Se ha verificado que el archivo `smartspend_backup.json` generado es válido y permite la recuperación total del estado de la aplicación en caso de pérdida de caché o cambio de dispositivo.
 - **Control de Errores:** Se ha implementado una validación mediante `FileReader` para evitar la corrupción del Store de Pinia al intentar importar archivos con formato incorrecto.
+
+---
+
+### 9. Desarrollo del Backend de IA (Fase 5)
+**Fecha:** Día 9
+
+He supervisado la integración del motor de Inteligencia Artificial en el servidor:
+- **Seguridad en el Lado del Servidor:** Se ha implementado el endpoint `server/api/chat.post.ts` usando Nitro. Esto asegura que la comunicación con OpenAI se realice de forma privada, ocultando la API Key del cliente final.
+- **Ingeniería de Prompts (Context Inflow):** He validado que el sistema inyecte automáticamente el JSON de gastos de los últimos 30 días en el contexto de la IA, permitiendo que el asesor financiero tenga "memoria" sobre los hábitos de gasto del usuario.
+- **Arquitectura Resiliente:** Se ha implementado un sistema de "Graceful Degradation". Ante fallos de red o de la API externa, el sistema captura la excepción y devuelve un mensaje controlado al usuario, manteniendo la estabilidad de la PWA.
+
+---
+
+### 11. Optimización del Motor Nitro (Lazy Initialization)
+**Fecha:** Dia 10
+
+Tras el error 500 detectado, supervisé la reestructuración del endpoint de IA:
+- **Diagnóstico:** El constructor de OpenAI se ejecutaba en el "Top-level", bloqueando el renderizador de Nuxt antes de su inicialización.
+- **Solución:** Se ha implementado una inicialización perezosa (Lazy) dentro del `defineEventHandler`. Esto no solo soluciona el error de arranque, sino que optimiza el consumo de memoria del servidor al instanciar el SDK de IA solo bajo demanda.
+- **Resultado:** El dashboard vuelve a ser operativo y el backend de IA está listo para recibir peticiones del frontend.
